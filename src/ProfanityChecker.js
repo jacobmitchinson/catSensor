@@ -17,7 +17,7 @@ ProfanityChecker.prototype.containsProfanity = function(string) {
   var outcome = false;
   var self = this;
 
-  string.split(" ").forEach(function(word) {
+  string.replace(/\W/g, ' ').split(' ').forEach(function(word) {
     if(self.isProfanity(word)) {
       outcome = true;
     }
