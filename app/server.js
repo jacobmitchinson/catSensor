@@ -3,16 +3,19 @@ var app = express();
 var http = require('http');
 var tweetGrabber = require('../src/twitterApi');
 
-app.use(express.static(__dirname + '/default.htm'));
+app.use(express.static(__dirname + '/public'));
+app.set('view engine', 'ejs');
 
 app.get('/', function(request, response) {
   console.log('hello');
 });
 
 app.get('/api/:name', function(request, response) {
-  console.log(request.query.name);
-  tweet = tweetGrabber(request.query.name, 1, function(tweet) {
-    response.render('api', {tweet: tweet});
+  console.log("/api/:name was hit");
+  var name = request.params.name;
+
+  tweetGrabber(name, 1, function(tweet) {
+    response.render('api', { tweet: tweet });
   });
 });
 
