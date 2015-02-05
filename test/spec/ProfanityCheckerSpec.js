@@ -1,11 +1,11 @@
-var ProfanityChecker = require('../../src/isProfanity');
+var ProfanityChecker = require('../../src/ProfanityChecker');
 
 describe('isProfanity', function() {
 
   var profanityChecker;
 
   beforeEach(function() {
-    profanityChecker = new ProfanityChecker();
+    profanityChecker = new ProfanityChecker(['shit', 'Fucking']);
   });
 
   it('checks if single word is profane', function() {
