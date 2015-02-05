@@ -1,9 +1,9 @@
 describe('API', function() {
 
-  it('displays a tweet that doesnt have any swearing in it', function() {
+  it('returns a json with the tweet', function() {
     casper.start('http://localhost:9999/api/guacamolay');
     casper.then(function() {
-      expect('body').to.have.text('Cats cats cats');
+      expect('body').to.have.text('{text: \'Cat cat cat\'}');
     })
   });
 });

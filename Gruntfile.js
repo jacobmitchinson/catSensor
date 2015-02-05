@@ -34,10 +34,10 @@ module.exports = function(grunt){
 
   grunt.loadNpmTasks('grunt-mocha-casperjs');
   grunt.loadNpmTasks('grunt-express-server');
-  grunt.loadNpmTasks('grunt-express');
+  // grunt.loadNpmTasks('grunt-express');
   grunt.loadNpmTasks('grunt-jasmine-node');
 
   grunt.registerTask('default', ['express:test','mocha_casperjs']);
   grunt.registerTask('jasmine', ['jasmine_node']);
-  grunt.registerTask('server', ['express', 'express-keepalive']);
+  // grunt.registerTask('server', ['express', 'express-keepalive']);
 };
