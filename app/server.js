@@ -11,11 +11,10 @@ app.get('/', function(request, response) {
 });
 
 app.get('/api/:name', function(request, response) {
-  console.log("/api/:name was hit");
   var name = request.params.name;
 
   tweetGrabber(name, 1, function(tweet) {
-    response.render('api', { tweet: tweet });
+    response.render('api', { tweet: tweet, profanity: 'false' });
   });
 });
 
