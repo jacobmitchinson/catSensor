@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href='css/cats.css' rel='stylesheet'>
+</head>
+<body>
+<form id='enter-twitter-handle'>
+  <input id='handle' type='text' name='handle' >
+  <input type='submit' value='submit'>
+</form>
+
+<template id='cat-container'>
+  <h1 id='tweet'>"{{ tweet }}"</h1>
+  <img src="http://thecatapi.com/api/images/get?format=src&type=gif">
+</template>
+
+<script src='https://code.jquery.com/jquery-2.0.3.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js'></script>
+<script src='js/applyCats.js'></script>
+
+</body>
+</html>
