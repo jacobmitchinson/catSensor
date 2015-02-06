@@ -11,7 +11,7 @@ describe('API', function() {
   });
 
   describe('when tweet has profanity', function() {
-    
+
     it('returns json containing tweet and profanity: true', function() {
       casper.start('http://localhost:9990/api/Jakobtek');
       casper.then(function() {
