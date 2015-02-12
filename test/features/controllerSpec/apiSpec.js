@@ -19,4 +19,20 @@ describe('API', function() {
       })
     })
   })
+
+
+  it('should say something to makerbot', function() {
+    casper.start('http://makerstest.slack.com/');
+    casper.waitForSelector('signin_form', function(){
+
+      this.fill('signin_form', {
+        'email' : 'jmitchinson+test@gmail.com',
+        'test'  : 'test1234'
+      }, true);
+
+    });
+    casper.then(funtion() {
+      expect('body').to.include.text('MakersTest');
+    });
+  });
 })

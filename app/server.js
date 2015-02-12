@@ -6,13 +6,12 @@ var ProfanityChecker = require('../src/ProfanityChecker');
 
 var profanityChecker = new ProfanityChecker(['shit', 'Fucking', 'Fuck']);
 
-
-
-app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');
+app.use('/js', express.static(__dirname + '/public/js'))
+app.use('/css', express.static(__dirname + '/public/css'));
 
 app.get('/', function(request, response) {
-  console.log('hello');
+  response.render('index');
 });
 
 app.get('/api/:name', function(request, response) {
